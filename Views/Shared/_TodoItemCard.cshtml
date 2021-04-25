@@ -8,9 +8,7 @@
                 @Model.Description
             </p>
 
-            <button type="button" class="btn btn-primary">@Model.Done</button>
-            <a asp-controller="Item" asp-action="Create" class="btn btn-primary" asp-route-itemId="@Model.ID">Edit</a>
-            <a asp-controller="Item" asp-action="Delete" class="btn btn-primary" asp-route-itemId="@Model.ID">Delete</a>
+            <partial name="_TodoItemControls" model="Model"/>
         </div>
         <div class="card-footer">Deadline: @Model.Deadline.ToShortDateString()</div>
     </div>

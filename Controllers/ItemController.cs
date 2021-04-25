@@ -76,5 +76,22 @@ namespace ToDoListMVC.Controllers
             ViewBag.Message = "Item was successfully removed!";
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult Done(int itemId)
+        {
+            var item = todoRepository.GetItemById(itemId);
+            if (item != null)
+            {
+                if (item.Done)
+                {
+                    item.Done = false;
+                }
+                else
+                {
+                    item.Done = true;
+                }
+            }
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

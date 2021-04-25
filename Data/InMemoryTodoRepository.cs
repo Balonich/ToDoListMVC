@@ -26,6 +26,7 @@ namespace ToDoListMVC.Data
                     Title = "Sports",
                     Description = "Go to gym",
                     Deadline = DateTime.Now.AddDays(2),
+                    Done = true
                 },
                 new Item
                 {
