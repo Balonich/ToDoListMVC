@@ -16,30 +16,58 @@ namespace ToDoListMVC.Data
                 new Item
                 {
                     ID = 1,
-                    Title = "Sports",
-                    Description = "Go to gym",
+                    Title = "DB",
+                    Description = "Add database with entity framework",
                     Deadline = DateTime.Now.AddDays(2),
                 },
                 new Item
                 {
                     ID = 2,
-                    Title = "Sports",
-                    Description = "Go to gym",
+                    Title = "Messages",
+                    Description = "Add messages on index page to inform about actions (create/edit/delete)",
                     Deadline = DateTime.Now.AddDays(2),
                     Done = true
                 },
                 new Item
                 {
                     ID = 3,
-                    Title = "Sports",
-                    Description = "Go to gym",
+                    Title = "Deadline",
+                    Description = "Crossout deadline when expired",
                     Deadline = DateTime.Now.AddDays(2),
                 },
                 new Item
                 {
                     ID = 4,
-                    Title = "Sports",
-                    Description = "Go to gym",
+                    Title = "Controls",
+                    Description = "Do not show controls on the delete page",
+                    Deadline = DateTime.Now.AddDays(2),
+                },
+                new Item
+                {
+                    ID = 5,
+                    Title = "Filter",
+                    Description = "Two containers with completed and not completed todos",
+                    Deadline = DateTime.Now.AddDays(2),
+                },
+                new Item
+                {
+                    ID = 6,
+                    Title = "Validation",
+                    Description = "Model validation on edit/create page",
+                    Deadline = DateTime.Now.AddDays(2),
+                },
+                new Item
+                {
+                    ID = 7,
+                    Title = "Information",
+                    Description = "Add information page, describe why this project was created",
+                    Deadline = DateTime.Now.AddDays(2),
+                },
+                new Item
+                {
+                    ID = 8,
+                    Title = "Scrolling",
+                    Description = "Scrolling is not working (not showing) when there are more than 9 items",
                     Deadline = DateTime.Now.AddDays(2),
                 }
             };

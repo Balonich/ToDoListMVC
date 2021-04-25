@@ -5,10 +5,7 @@
     <meta charset='utf-8'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    @* <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"> *@
-    @* <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" /> *@
     <script src="~/lib/jquery/jquery.js"></script>
-    @* <script src="~/lib/bootstrap/js/bootstrap.js"></script> *@
     <link href="~/css/site.css" rel="stylesheet" />
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -28,7 +25,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-lg-block">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar w/ text</a>
+                <a class="navbar-brand" href="#">To Do!</a>
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
@@ -36,16 +33,19 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarText">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" asp-action="Index" asp-controller="Home"><i
+                                    class="fas fa-home fa-lg" style="color: #fbfbfb"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link active" href="https://github.com/Balonich/ToDoListMVC"><i
+                                    class="fab fa-github fa-lg" style="color: #fbfbfb"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link active" href="#"><i class="fas fa-info-circle fa-lg"
+                                    style="color: #fbfbfb"></i></a>
                         </li>
                     </ul>
-                    <span class="navbar-text"> Navbar text with an inline element </span>
+                    <span class="navbar-text"> I want to believe </span>
                 </div>
             </div>
         </nav>
@@ -54,11 +54,13 @@
 
     <!--основной контент-->
     <div class="container text-white" style="padding-top: 2%;">
-        @RenderBody()
+        <section class="">
+            @RenderBody()
+        </section>
     </div>
     <footer class="fixed-bottom bg-dark text-center text-white">
         <div class="text-center p-3">
-            © 2021 ToDo List
+            © 2021 ToDo List by Balonich
         </div>
     </footer>
 </body>
