@@ -1,0 +1,13 @@
+.boooody {
+    background: url('https://images.wallpaperscraft.com/image/stars_milky_way_space_116893_1920x1080.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.mask-bg {
+    backdrop-filter: blur(1.0px);
+    background-color: rgba(96, 97, 102, 0.25);
+}
+
