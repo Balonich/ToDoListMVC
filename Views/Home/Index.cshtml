@@ -6,20 +6,6 @@
 <div class="row gx-5 justify-content-start">
     @foreach (var item in Model)
     {
-        <div class="col-lg-4 col-md-12" style="padding-top: 2%;">
-            <div class="card text-white" style="border-radius: 1rem; background-color: rgba(70, 70, 74, 0.92);">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Title</h5>
-                    <p class="card-text">
-                        @item.Description
-                    </p>
-
-                    <button type="button" class="btn btn-primary">@item.Done</button>
-                    <a asp-controller="Item" asp-action="Create" class="btn btn-primary" asp-route-itemId="@item.ID">Edit</a>
-                    <a asp-controller="Item" asp-action="Delete" class="btn btn-primary" asp-route-itemId="@item.ID">Delete</a>
-                </div>
-                <div class="card-footer">Deadline: @item.Deadline.ToShortDateString()</div>
-            </div>
-        </div>
+        <partial name="_TodoItemCard" model="item"/>
     }
 </div>

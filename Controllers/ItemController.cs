@@ -50,10 +50,31 @@ namespace ToDoListMVC.Controllers
             return View(newItem);
         }
 
+        [HttpGet]
+        [ActionName("Delete")]
+        public IActionResult ConfirmDelete(int itemId)
+        {
+            Item = todoRepository.GetItemById(itemId);
+            if (Item == null)
+            {
+                return RedirectToAction("NotFound");
+            }
+            return View(Item);
+        }
+
         [HttpPost]
         public IActionResult Delete(int itemId)
         {
-            return View();
+            var removedItem = todoRepository.Remove(itemId);
+
+            if (removedItem == null)
+            {
+                return RedirectToAction("NotFound");
+            }
+            // TODO:
+            // add message
+            ViewBag.Message = "Item was successfully removed!";
+            return RedirectToAction("Index", "Home");
         }
     }
 }

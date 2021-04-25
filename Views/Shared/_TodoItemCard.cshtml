@@ -1,0 +1,17 @@
+@model Item
+
+<div class="col-lg-4 col-md-12" style="padding-top: 2%;">
+    <div class="card text-white" style="border-radius: 1rem; background-color: rgba(70, 70, 74, 0.92);">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">
+                @Model.Description
+            </p>
+
+            <button type="button" class="btn btn-primary">@Model.Done</button>
+            <a asp-controller="Item" asp-action="Create" class="btn btn-primary" asp-route-itemId="@Model.ID">Edit</a>
+            <a asp-controller="Item" asp-action="Delete" class="btn btn-primary" asp-route-itemId="@Model.ID">Delete</a>
+        </div>
+        <div class="card-footer">Deadline: @Model.Deadline.ToShortDateString()</div>
+    </div>
+</div>
