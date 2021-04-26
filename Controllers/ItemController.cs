@@ -63,6 +63,7 @@ namespace ToDoListMVC.Controllers
                 todoRepository.Add(newItem.Item);
             }
 
+            todoRepository.Commit();
             TempData["Message"] = newItem.Message;
             return RedirectToAction("Index", "Home");
         }
@@ -88,8 +89,8 @@ namespace ToDoListMVC.Controllers
             {
                 return RedirectToAction("NotFound");
             }
-            // TODO:
-            // add message
+
+            todoRepository.Commit();
             TempData["Message"] = "Item was successfully removed!";
             return RedirectToAction("Index", "Home");
         }
@@ -108,6 +109,8 @@ namespace ToDoListMVC.Controllers
                     item.Done = true;
                 }
             }
+
+            todoRepository.Commit();
             return RedirectToAction("Index", "Home");
         }
     }

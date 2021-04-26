@@ -65,17 +65,17 @@
             <div class="form-outline form-white">
                 <input asp-for="Item.Title" class="form-control form-control form-control-lg bg-dark"/>
                 <label asp-for="Item.Title" class="form-label"></label>
-                <span asp-validation-for="Item.Title"></span>
+                <span asp-validation-for="Item.Title" class="text-danger"></span>
             </div>
             <div class="form-outline form-white">
-                <textarea asp-for="Item.Description" rows="4" class="form-control bg-dark" style="margin-top: 1%;margin-bottom: 1%"></textarea>
+                <textarea asp-for="Item.Description" rows="4" class="form-control bg-dark" style="margin-top: 1%;"></textarea>
                 <label asp-for="Item.Description" class="form-label"></label>
-                <span asp-validation-for="Item.Description"></span>
+                <span asp-validation-for="Item.Description" class="text-danger"></span>
             </div>
             <div class="form-outline form-white">
-                <input asp-for="Item.Deadline" type="date" class="form-control bg-dark"/>
+                <input asp-for="Item.Deadline" type="date" class="form-control bg-dark" style="margin-top: 1%;"/>
                 <label asp-for="Item.Deadline" class="form-label"></label>
-                <span asp-validation-for="Item.Deadline"></span>
+                <span asp-validation-for="Item.Deadline" class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-primary" style="margin-top: 1%">Done!</button>
         </form>

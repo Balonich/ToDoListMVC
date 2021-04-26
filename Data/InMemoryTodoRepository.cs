@@ -109,5 +109,10 @@ namespace ToDoListMVC.Data
             }
             return item;
         }
+
+        public int Commit()
+        {
+            return 0;
+        }
     }
 }

@@ -42,5 +42,10 @@ namespace ToDoListMVC.Data
             entity.State = EntityState.Modified;
             return updatedItem;
         }
+
+        public int Commit()
+        {
+            return appDbContext.SaveChanges();
+        }
     }
 }
