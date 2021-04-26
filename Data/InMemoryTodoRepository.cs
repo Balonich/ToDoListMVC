@@ -82,6 +82,19 @@ namespace ToDoListMVC.Data
             return newItem;
         }
 
+        public Item Update(Item updatedItem)
+        {
+            var item = items.SingleOrDefault(r => r.ID == updatedItem.ID);
+            if (item != null)
+            {
+                item.Title = updatedItem.Title;
+                item.Description = updatedItem.Description;
+                item.Deadline = updatedItem.Deadline;
+                item.Done = updatedItem.Done;
+            }
+            return item;
+        }
+
         public Item GetItemById(int id)
         {
             return items.FirstOrDefault(i => i.ID == id);

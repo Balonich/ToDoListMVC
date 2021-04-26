@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ToDoListMVC.Data;
 using ToDoListMVC.Models;
+using ToDoListMVC.ViewModels;
 
 namespace ToDoListMVC.Controllers
 {
@@ -15,9 +16,13 @@ namespace ToDoListMVC.Controllers
         [BindProperty]
         public Item Item { get; set; }
 
+        [BindProperty]
+        public TodoItemWIthMessageViewModel TodoViewModel { get; set; }
+
         public ItemController(ITodoRepository todoRepository)
         {
             this.todoRepository = todoRepository;
+            TodoViewModel = new TodoItemWIthMessageViewModel();
         }
 
         [HttpGet]
@@ -25,29 +30,41 @@ namespace ToDoListMVC.Controllers
         {
             if (itemId.HasValue)
             {
-                Item = todoRepository.GetItemById(itemId.Value);
+                TodoViewModel.Item = todoRepository.GetItemById(itemId.Value);
+                TodoViewModel.Message = "Item was successfully updated!";
             }
             else
             {
-                Item = new Item();
+                TodoViewModel.Item = new Item();
+                TodoViewModel.Message = "Item was successfully created!";
             }
 
-            if (Item == null)
+            if (TodoViewModel.Item == null)
             {
                 return RedirectToAction("NotFound");
             }
-            return View(Item);
+            return View(TodoViewModel);
         }
 
         [HttpPost]
-        public IActionResult Create(Item newItem)
+        public IActionResult Create(TodoItemWIthMessageViewModel newItem)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                todoRepository.Add(newItem);
-                return RedirectToAction("Index", "Home");
+                return View(newItem);
             }
-            return View(newItem);
+
+            if (newItem.Item.ID > 0)
+            {
+                todoRepository.Update(newItem.Item);
+            }
+            else
+            {
+                todoRepository.Add(newItem.Item);
+            }
+
+            TempData["Message"] = newItem.Message;
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
@@ -73,7 +90,7 @@ namespace ToDoListMVC.Controllers
             }
             // TODO:
             // add message
-            ViewBag.Message = "Item was successfully removed!";
+            TempData["Message"] = "Item was successfully removed!";
             return RedirectToAction("Index", "Home");
         }
 

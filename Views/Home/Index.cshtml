@@ -2,10 +2,16 @@
 
 
 <h1>Hello! There is something to do...</h1>
+@if (TempData.ContainsKey("Message"))
+{
+    <p class="note note-primary text-dark">
+        <strong>Note info: </strong>@TempData["Message"]
+    </p>
+}
 <a asp-controller="Item" asp-action="Create" class="btn btn-primary">Create</a>
 <div class="row gx-5 justify-content-start">
     @foreach (var item in Model)
     {
-        <partial name="_TodoItemCard" model="item"/>
+        <partial name="_TodoItemCard" model="item" />
     }
 </div>

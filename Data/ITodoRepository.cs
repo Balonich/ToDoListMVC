@@ -8,6 +8,7 @@ namespace ToDoListMVC.Data
         IEnumerable<Item> AllItems { get; }
         Item GetItemById(int id);
         Item Add(Item newItem);
+        Item Update(Item updatedItem);
         Item Remove(int id);
     }
 }
