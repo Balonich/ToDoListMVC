@@ -7,8 +7,10 @@
             <p class="card-text">
                 @Model.Description
             </p>
-
-            <partial name="_TodoItemControls" model="Model"/>
+            @if (ViewBag.ShowControlls == true)
+            {
+                <partial name="_TodoItemControls" model="Model"/>
+            }
         </div>
         <div class="card-footer">
             @if (Model.Deadline > DateTime.Now)

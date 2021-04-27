@@ -19,6 +19,7 @@ namespace ToDoListMVC.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.ShowControlls = true;
             var items = todoRepository.AllItems;
             return View(items);
         }
