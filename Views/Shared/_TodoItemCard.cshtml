@@ -10,6 +10,15 @@
 
             <partial name="_TodoItemControls" model="Model"/>
         </div>
-        <div class="card-footer">Deadline: @Model.Deadline.ToShortDateString()</div>
+        <div class="card-footer">
+            @if (Model.Deadline > DateTime.Now)
+            {
+                <span class="text-decoration-underline">Deadline: @Model.Deadline.ToShortDateString()</span>
+            }
+            else
+            {
+                <span class="text-decoration-line-through">Deadline: @Model.Deadline.ToShortDateString()</span>
+            }
+        </div>
     </div>
 </div>
