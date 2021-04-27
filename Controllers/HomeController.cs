@@ -23,5 +23,10 @@ namespace ToDoListMVC.Controllers
             var items = todoRepository.AllItems;
             return View(items);
         }
+
+        public IActionResult Information()
+        {
+            return View();
+        }
     }
 }

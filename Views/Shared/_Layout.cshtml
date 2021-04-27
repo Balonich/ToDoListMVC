@@ -16,11 +16,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
 </head>
 
-<body class="bg-image mask-bg" style="
+<body id="style-1" class="bg-image mask-bg scrollbar" style="
     background-image: url('https://images.pexels.com/photos/1146134/pexels-photo-1146134.jpeg?h=1080&w=1920');
-    height: 100vh;
+    overflow: visible;
+    min-height: 100vh;
   ">
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-lg-block">
             <div class="container-fluid">
@@ -40,8 +40,8 @@
                                     class="fab fa-github fa-lg" style="color: #fbfbfb"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fas fa-info-circle fa-lg"
-                                    style="color: #fbfbfb"></i></a>
+                            <a class="nav-link active" asp-action="Information" asp-controller="Home"><i
+                                    class="fas fa-info-circle fa-lg" style="color: #fbfbfb"></i></a>
                         </li>
                     </ul>
                     <span class="navbar-text"> I want to believe </span>
@@ -52,12 +52,10 @@
 
 
     <!--основной контент-->
-    <div class="container text-white" style="padding-top: 2%;">
-        <section class="">
-            @RenderBody()
-        </section>
+    <div class="container text-white" style="padding-top: 2%;padding-bottom: 5%;overflow-y: auto;overflow-x: hidden;">
+        @RenderBody()
     </div>
-    <footer class="fixed-bottom bg-dark text-center text-white">
+    <footer class="bg-dark fixed-bottom text-center text-white">
         <div class="text-center p-3">
             © 2021 ToDo List by Balonich
         </div>
