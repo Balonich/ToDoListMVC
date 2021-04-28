@@ -20,7 +20,7 @@ namespace ToDoListMVC.Controllers
         public IActionResult Index()
         {
             ViewBag.ShowControlls = true;
-            var items = todoRepository.AllItems;
+            var items = todoRepository.AllItems.OrderBy(i => i.Deadline);
             return View(items);
         }
 

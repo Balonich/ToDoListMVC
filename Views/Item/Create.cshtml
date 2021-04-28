@@ -62,6 +62,7 @@
         <form asp-action="create" method="post">
             <input type="hidden" asp-for="Message" />
             <input type="hidden" asp-for="Item.ID" />
+            <input type="hidden" asp-for="Item.Done" />
             <div class="form-outline form-white">
                 <input asp-for="Item.Title" class="form-control form-control form-control-lg bg-dark"/>
                 <label asp-for="Item.Title" class="form-label"></label>
